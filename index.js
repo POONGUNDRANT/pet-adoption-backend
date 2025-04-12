@@ -23,12 +23,14 @@ connectDB(process.env.MONGODB_URI);
 const app = express();
 
 // Middleware Configuration
-app.use(cors({
-  origin: ["http://localhost:5173", "https://petspalss.netlify.app"], // Allowed origins
-  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
-  credentials: true, // Allow cookies and credentials
-  allowedHeaders: ["Content-Type", "Authorization"], // Custom headers
-}));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://pet-adope.netlify.app"], // Allowed origins
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
+    credentials: true, // Allow cookies and credentials
+    allowedHeaders: ["Content-Type", "Authorization"], // Custom headers
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
